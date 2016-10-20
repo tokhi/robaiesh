@@ -1,0 +1,12 @@
+[
+  "http://www.hngn.com/articles/212637/20161019/crab-creature-appears-mars-nasa.htm",
+  "http://www.hngn.com/articles/212637/20161019/crab-creature-appears-mars-nasa.htm",
+  "http://www.hngn.com/articles/212580/20161019/extraterrestrial-signals-seti-et-aliens-ermanno-borra-russia-hd164595-stars-space.htm",
+  "http://www.hngn.com/articles/212580/20161019/extraterrestrial-signals-seti-et-aliens-ermanno-borra-russia-hd164595-stars-space.htm",
+  "http://www.hngn.com/articles/212279/20161018/oneplus-4-news-set-2017-launch-will-kill-iphone-7.htm",
+  "http://www.hngn.com/articles/212279/20161018/oneplus-4-news-set-2017-launch-will-kill-iphone-7.htm",
+  "http://www.hngn.com/articles/212195/20161017/android-7-0-nougat-update-complete-list-oneplus-nexus-samsung.htm",
+  "http://www.hngn.com/articles/212195/20161017/android-7-0-nougat-update-complete-list-oneplus-nexus-samsung.htm",
+  "http://www.hngn.com/articles/212433/20161019/nasa-warning-1000-deadly-asteroids-found-dangerously-earth-deflect.htm",
+  "http://www.hngn.com/articles/212433/20161019/nasa-warning-1000-deadly-asteroids-found-dangerously-earth-deflect.htm"
+]

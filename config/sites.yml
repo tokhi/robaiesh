@@ -1,66 +1,66 @@
 
 # www.morningnewsusa.com:
-#   content: '.single-main'
-#   thumbnail: '.wp-caption img@src'
-#   article: '.mnu_article_content [p@html]'
-#   junks: ''
-#   path: ''
+#   content: ".single-main"
+#   thumbnail: ".wp-caption img@src"
+#   article: ".mnu_article_content [p@html]"
+#   junks: ""
+#   path: ""
 # www.inquisitr.com:
-#   content: '.contentblock'
-#   thumbnail: '.header @style'
-#   article: 'article@html | clean'
-#   junks: ''
-#   path: '/category/science-news/space-news-science-news/'
+#   content: ".contentblock"
+#   thumbnail: ".header @style"
+#   article: "article@html | clean"
+#   junks: ""
+#   path: "/category/science-news/space-news-science-news/"
 # 1.
 www.inspireactachieve.com:
-  protocol: 'http'
-  content: '.td-pb-span8'
-  thumbnail: '.wp-caption img@src'
-  article: '.td-ss-main-content@html | clean'
-  path: '/category/science/'
-  list: '.td_block_inner'
-  list_item: '.td-module-thumb a@href'
-  junks: '.code-block,.mashsb-container footer'
+  protocol: "http"
+  content: ".td-pb-span8"
+  thumbnail: ".wp-caption img@src"
+  article: ".td-ss-main-content@html | clean"
+  path: "/category/science/"
+  list: ".td_block_inner"
+  list_item: ".td-module-thumb a@href"
+  junks: ".code-block,.mashsb-container footer"
 # 2.
 www.hngn.com:
-  protocol: 'http'
-  content: '.main_cont_sub'
-  thumbnail: '.img_article img@src'
-  article: '.article@html | clean'
-  list: '.main_cont'
-  list_item: '.sub_box01 @href'
-  junks: '.user_tool,addthis_toolbox'
-  path: '/science/'
+  protocol: "http"
+  content: ".main_cont_sub"
+  thumbnail: ".img_article img@src"
+  article: ".article@html | clean"
+  list: ".sidebar"
+  list_item: ".all_box a@href"
+  junks: ".user_tool,addthis_toolbox"
+  path: "/science/"
 # 3.
 simplecapacity.com:
-  protocol: 'http'
-  content: '#post-left-col'
-  thumbnail: '#content-main img@src'
-  article: '#post-area@html | clean'
-  list: '#home-main-wrap'
-  list_item: 'a@href'
-  junks: 'comments-button,comments'
-  path: '/category/inspiration-motivation-self-improvement/'
+  protocol: "http"
+  content: "#post-left-col"
+  thumbnail: "#content-main img@src"
+  article: "#post-area@html | clean"
+  list: "#home-main-wrap"
+  list_item: "a@href"
+  junks: "comments-button,comments"
+  path: "/category/inspiration-motivation-self-improvement/"
 # 4.
 www.scienceworldreport.com:
-  protocol: 'http'
-  content: '.uni-main'
-  thumbnail: '.story-contents img@src'
-  article: 'article@html | clean'
-  list: '.bk-bd'
-  list_item: 'a@href'
-  junks: '.bk-desktop_related,.story-tools,.story-posted,.story-tools'
-  path: '/space-the-future/'
+  protocol: "http"
+  content: ".uni-main"
+  thumbnail: ".story-contents img@src"
+  article: "article@html | clean"
+  list: "#stype"
+  list_item: ".bk-con a@href"
+  junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools"
+  path: "/space-the-future/"
 # 5.
 edmontonjournal.com:
-  protocol: 'http'
-  content: '.l-main'
-  thumbnail: '.post-img img@src'
-  article: '.l-article@html | clean'
-  list: '.twelvecol'
-  list_item: 'article a@href'
-  junks: '.story_details'
-  path: '/category/space/'
+  protocol: "http"
+  content: ".l-main"
+  thumbnail: ".post-img img@src"
+  article: ".l-article@html | clean"
+  list: ".twelvecol"
+  list_item: "article a@href"
+  junks: ".story_details"
+  path: "/category/space/"
 
 #  add javascrip rules to remove some of the divs on load
 # http://simplecapacity.com/category/inspiration-motivation-self-improvement/

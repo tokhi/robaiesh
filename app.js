@@ -24,12 +24,24 @@ for(var website in sitesYml) {
   website +=sitesYml[website].path;
   
   var sUrl = url.parse(protocol + website,true);
-  // console.log(sUrl.href);
-  // check if there is a domain in the path
-  // check the url path is included in the path
-  x(sUrl.href, sitesYml[sUrl.hostname].list,[{
-    link: sitesYml[sUrl.hostname].list_item
-  }])(console.log);
+  var filename = "files/"+sUrl.hostname+".txt"
+  // var sUrl = url.parse('http://www.hngn.com/science/',true);
+  // console.log(sitesYml[sUrl.hostname].list_item);
+  // console.log("********************");
+  x(sUrl.href, sitesYml[sUrl.hostname].list,[
+    sitesYml[sUrl.hostname].list_item
+   ])
+  .write(filename);
+   // check if there is a domain in the path
+  fs = require('fs');
+  console.log("file: ", filename);
+  fs.readFile(filename, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(data);
+  });
+
 }
 
 // var site = 'http://www.inquisitr.com/3596027/will-a-mars-colony-bring-back-the-city-states-of-ancient-greece/'
