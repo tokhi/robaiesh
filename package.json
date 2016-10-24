@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "fs": "0.0.1-security",
+    "jQuery": "^1.7.4",
     "x-ray": "^2.3.1",
     "yamljs": "^0.2.8"
   }

@@ -1,12 +1,12 @@
 [
-  "http://www.hngn.com/articles/212637/20161019/crab-creature-appears-mars-nasa.htm",
-  "http://www.hngn.com/articles/212637/20161019/crab-creature-appears-mars-nasa.htm",
-  "http://www.hngn.com/articles/212580/20161019/extraterrestrial-signals-seti-et-aliens-ermanno-borra-russia-hd164595-stars-space.htm",
-  "http://www.hngn.com/articles/212580/20161019/extraterrestrial-signals-seti-et-aliens-ermanno-borra-russia-hd164595-stars-space.htm",
-  "http://www.hngn.com/articles/212279/20161018/oneplus-4-news-set-2017-launch-will-kill-iphone-7.htm",
-  "http://www.hngn.com/articles/212279/20161018/oneplus-4-news-set-2017-launch-will-kill-iphone-7.htm",
-  "http://www.hngn.com/articles/212195/20161017/android-7-0-nougat-update-complete-list-oneplus-nexus-samsung.htm",
-  "http://www.hngn.com/articles/212195/20161017/android-7-0-nougat-update-complete-list-oneplus-nexus-samsung.htm",
-  "http://www.hngn.com/articles/212433/20161019/nasa-warning-1000-deadly-asteroids-found-dangerously-earth-deflect.htm",
-  "http://www.hngn.com/articles/212433/20161019/nasa-warning-1000-deadly-asteroids-found-dangerously-earth-deflect.htm"
+  "http://www.hngn.com/articles/213355/20161023/ufo-sightings-nasas-image-shows-10-km-long-alien-mothership-on-moons-crater.htm",
+  "http://www.hngn.com/articles/213355/20161023/ufo-sightings-nasas-image-shows-10-km-long-alien-mothership-on-moons-crater.htm",
+  "http://www.hngn.com/articles/213285/20161023/macbook-pro-2016-release-date-specs-13-inch-15-variants.htm",
+  "http://www.hngn.com/articles/213285/20161023/macbook-pro-2016-release-date-specs-13-inch-15-variants.htm",
+  "http://www.hngn.com/articles/213486/20161024/nasa-destroyed-esa-mars-lander-russian-probe-hinder-search-alien.htm",
+  "http://www.hngn.com/articles/213486/20161024/nasa-destroyed-esa-mars-lander-russian-probe-hinder-search-alien.htm",
+  "http://www.hngn.com/articles/213416/20161024/ufo-sightings-nasas-image-shows-3-cm-alien-sabotaging-curiosity-rover.htm",
+  "http://www.hngn.com/articles/213416/20161024/ufo-sightings-nasas-image-shows-3-cm-alien-sabotaging-curiosity-rover.htm",
+  "http://www.hngn.com/articles/213490/20161024/accidental-breakthrough-scientists-turns-carbon-dioxide-renewable-energy.htm",
+  "http://www.hngn.com/articles/213490/20161024/accidental-breakthrough-scientists-turns-carbon-dioxide-renewable-energy.htm"
 ]

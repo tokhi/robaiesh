@@ -52,7 +52,7 @@ www.scienceworldreport.com:
   junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools"
   path: "/space-the-future/"
 # 5.
-edmontonjournal.com:
+www.edmontonjournal.com:
   protocol: "http"
   content: ".l-main"
   thumbnail: ".post-img img@src"
@@ -63,6 +63,4 @@ edmontonjournal.com:
   path: "/category/space/"
 
 #  add javascrip rules to remove some of the divs on load
-# http://simplecapacity.com/category/inspiration-motivation-self-improvement/
-# http://www.scienceworldreport.com/space-the-future/
-# http://edmontonjournal.com/technology/space/outer-space-expert-visiting-edmonton-predicts-aliens-will-be-found-by-2025
+# http://theusualroutine.com/
