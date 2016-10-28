@@ -16,51 +16,68 @@ www.inspireactachieve.com:
   protocol: "http"
   content: ".td-pb-span8"
   thumbnail: ".wp-caption img@src"
+  title: ".entry-title"
   article: ".td-ss-main-content@html | clean"
   path: "/category/science/"
   list: ".td_block_inner"
   list_item: ".td-module-thumb a@href"
-  junks: ".code-block,.mashsb-container footer"
+  junks: ".code-block,.td-post-source-tags,.mashsb-container,"
 # 2.
 www.hngn.com:
   protocol: "http"
   content: ".main_cont_sub"
   thumbnail: ".img_article img@src"
+  title: ".art-ttl"
   article: ".article@html | clean"
   list: ".sidebar"
   list_item: ".all_box a@href"
-  junks: ".user_tool,addthis_toolbox"
+  junks: ".user_tool,.addthis_toolbox"
   path: "/science/"
 # 3.
 simplecapacity.com:
   protocol: "http"
   content: "#post-left-col"
   thumbnail: "#content-main img@src"
+  title: ".post-title | noSpecialChar"
   article: "#post-area@html | clean"
-  list: "#home-main-wrap"
+  list: "#home-mid-wrap"
   list_item: "a@href"
-  junks: "comments-button,comments"
+  junks: "#comments-button,.comments,.post-cat-link,.mashsb-container,#comments,.post-tags,.code-block"
   path: "/category/inspiration-motivation-self-improvement/"
 # 4.
 www.scienceworldreport.com:
   protocol: "http"
   content: ".uni-main"
   thumbnail: ".story-contents img@src"
-  article: "article@html | clean"
+  title: ".story-headline"
+  article: ".uni-main@html | clean"
   list: "#stype"
   list_item: ".bk-con a@href"
-  junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools"
+  junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools,.bk-mostpop,.adunit_rectangle,.bk-desktop_related"
   path: "/space-the-future/"
 # 5.
+edmontonjournal.com:
+  protocol: "http"
+  content: ".l-main"
+  thumbnail: ".post-img img@src"
+  title: ".entry-title"
+  article: ".l-article@html | clean"
+  list: ".twelvecol"
+  list_item: "article a@href"
+  junks: ".story_details,.modal-close,#modal-share,.comments-area"
+  path: "/category/space/"
+
 www.edmontonjournal.com:
   protocol: "http"
   content: ".l-main"
   thumbnail: ".post-img img@src"
+  title: ".entry-title"
   article: ".l-article@html | clean"
   list: ".twelvecol"
   list_item: "article a@href"
-  junks: ".story_details"
+  junks: ".story_details,.modal-close,#modal-share,.comments-area"
   path: "/category/space/"
 
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
+# http://reflectionofmind.org/

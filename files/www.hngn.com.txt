@@ -1,12 +1,12 @@
 [
-  "http://www.hngn.com/articles/213355/20161023/ufo-sightings-nasas-image-shows-10-km-long-alien-mothership-on-moons-crater.htm",
-  "http://www.hngn.com/articles/213355/20161023/ufo-sightings-nasas-image-shows-10-km-long-alien-mothership-on-moons-crater.htm",
-  "http://www.hngn.com/articles/213285/20161023/macbook-pro-2016-release-date-specs-13-inch-15-variants.htm",
-  "http://www.hngn.com/articles/213285/20161023/macbook-pro-2016-release-date-specs-13-inch-15-variants.htm",
-  "http://www.hngn.com/articles/213486/20161024/nasa-destroyed-esa-mars-lander-russian-probe-hinder-search-alien.htm",
-  "http://www.hngn.com/articles/213486/20161024/nasa-destroyed-esa-mars-lander-russian-probe-hinder-search-alien.htm",
-  "http://www.hngn.com/articles/213416/20161024/ufo-sightings-nasas-image-shows-3-cm-alien-sabotaging-curiosity-rover.htm",
-  "http://www.hngn.com/articles/213416/20161024/ufo-sightings-nasas-image-shows-3-cm-alien-sabotaging-curiosity-rover.htm",
-  "http://www.hngn.com/articles/213490/20161024/accidental-breakthrough-scientists-turns-carbon-dioxide-renewable-energy.htm",
-  "http://www.hngn.com/articles/213490/20161024/accidental-breakthrough-scientists-turns-carbon-dioxide-renewable-energy.htm"
+  "http://www.hngn.com/articles/214153/20161027/ufo-sightings-two-flying-saucers-caught-whizzing-moon-military-formation.htm",
+  "http://www.hngn.com/articles/214153/20161027/ufo-sightings-two-flying-saucers-caught-whizzing-moon-military-formation.htm",
+  "http://www.hngn.com/articles/214021/20161027/ios-10-jailbreak-news-pangu-s-silence-tool-gives-alternatives.htm",
+  "http://www.hngn.com/articles/214021/20161027/ios-10-jailbreak-news-pangu-s-silence-tool-gives-alternatives.htm",
+  "http://www.hngn.com/articles/213657/20161025/android-7-0-nougat-update-oneplus-3-2-x-release.htm",
+  "http://www.hngn.com/articles/213657/20161025/android-7-0-nougat-update-oneplus-3-2-x-release.htm",
+  "http://www.hngn.com/articles/213932/20161026/5-features-to-expect-from-htc-11.htm",
+  "http://www.hngn.com/articles/213932/20161026/5-features-to-expect-from-htc-11.htm",
+  "http://www.hngn.com/articles/213804/20161026/world-war-3-australia-new-zealand-offer-best-chances-survive.htm",
+  "http://www.hngn.com/articles/213804/20161026/world-war-3-australia-new-zealand-offer-best-chances-survive.htm"
 ]

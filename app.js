@@ -4,18 +4,17 @@ var url = require("url");
 YAML = require('yamljs');
  
 sitesYml = YAML.load('config/sites.yml');
-console.log(sitesYml["www.inspireactachieve.com"].content);
-
-/** X-ray **/
-// var feedURL = 'https://www.google.com/alerts/feeds/01662123773360489091/16154056701822473634';
 var Xray = require('x-ray');
 var x = Xray({
   filters: {
     clean: function (value){
-    	console.log(typeof value);
        value = value.replace(/"/g, '');
        value = value.replace(/(?:\r\n\t|\r|\n|\t)/g, '');
        return value;
+    },
+    noSpecialChar: function (value) {
+      value = value.replace(/[‘–’]/g,'');
+      return value;
     }
   }
 });
@@ -25,100 +24,129 @@ for(var website in sitesYml) {
   
   var sUrl = url.parse(protocol + website,true);
   var filename = "files/"+sUrl.hostname+".txt"
-  // var filename = "files/"+sUrl.hostname.split('.')[1];
-  // var sUrl = url.parse('http://www.hngn.com/science/',true);
-  // console.log(sitesYml[sUrl.hostname].list_item);
-  // console.log("********************");
-   // setTimeout(function () {
   x(sUrl.href, sitesYml[sUrl.hostname].list,[
     sitesYml[sUrl.hostname].list_item
    ])
-  .write(filename);
-   // }, 10);
-   // check if there is a domain in the path
- 
-};
-for(var website in sitesYml) {
- fs = require('fs');
- var filename = "files/test.txt"
-  console.log("file: ", filename);
-  fs.readFile(filename, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
+     .write(filename);
+}
+
+
+function xrayArticles(articleList, sitesYml, iterator, callback) {
+  var sUrl = '';
+  var articleSize = 0;
+  if (articleList.length > 5) articleSize = 5;
+  function report() {
+      callback(sUrl)
+  } // end report
+  for(var i=0;i<articleSize;i++){
+    sUrl = url.parse(articleList[i],true);
+    iterator(sUrl, report)
+  }// end for
+}
+function initPostRequest(sUrl, content) {
+  console.log('~>|',sUrl.href);
+  /**  BEGIN content clean **/
+  var junks = sitesYml[sUrl.hostname].junks.split(",")
+  , title = content[0]['title'];
+  var jsdom = require("jsdom");
+
+  jsdom.env(
+    content[0]['text'],
+    ["http://code.jquery.com/jquery.js"],
+    function (err, window) {
+      window.$('script').remove();
+     for(var i in junks) {
+        window.$(junks[i]).remove();
+      }
+      postToWordpress(window.$("body").html(), sUrl, title);
     }
-    // console.log(data);
-    var urls = JSON.parse(data);
+  );
+   /**  END content clean **/
+
+}
+
+var contentFetchInit = function (err,data) {
+  var domainKeys = Object.keys(sitesYml);
+  var count = 0;
+  for(var i=0;i<domainKeys.length;i++){
+  if (err) {
+    return console.log(err);
+  }
+
+
+  if(++count == domainKeys.length && data != null && data != ""){
+     var urls = JSON.parse(data);
     // remove duplicates from array
-    urls_array = urls.filter(function(elem, pos) {
-      return urls.indexOf(elem) == pos;
-    });
-    console.log("array: ",typeof urls);
-    // loop through array
-    for(var mUrl in urls_array) {
-      var sUrl = url.parse(urls_array[mUrl],true);
-      console.log("Murl: ",urls_array[mUrl]);
-       // console.log("sUrl: ",sUrl);
+    urls_array = Array.from(new Set(urls));
+    xrayArticles(urls_array, sitesYml, function(sUrl, report) {
       x(sUrl.href, sitesYml[sUrl.hostname].content,[{
-       text: sitesYml[sUrl.hostname].article,
-         image: sitesYml[sUrl.hostname].thumbnail
-      }] 
-      )
-      (function(err, content) {
-        // console.log(content);
-        /**  BEGIN content clean **/
-        // var jsdom = require('jsdom').jsdom
-        // , myWindow = jsdom().createWindow()
-        // , $ = require('jQuery')
-        // , jq = require('jQuery').create()
-        // , jQuery = require('jQuery').create(myWindow)
-        // , body = $('<div/>').html(contents[0]['text']).contents()
-        // ;
-        // body.find('input');
+           title: sitesYml[sUrl.hostname].title,
+           text: sitesYml[sUrl.hostname].article,
+           image: sitesYml[sUrl.hostname].thumbnail
+          }] 
+          )
+          (function(err, content) {
+             if(content.length > 0)
+              initPostRequest(sUrl, content)
+           
+          }); // end x
+    }, initPostRequest); // end xrayArticles
 
-        /**  END content clean **/
+  } // end if
+}
 
-        var request = require('request'),
-          username = "admin",
-          password = "lovecandle",
-          url = "http://" + username + ":" + password + "@192.168.0.12:8080/wp-json/wp/v2/posts";
+}; // end contentFetch
 
-          // console.log(content[0]['text']);
-          request.post(
-               url,
-              { json: {
-                  title: sUrl.hostname+" post",
-                  content: content[0]['text'],
-                  status: "publish"
-              } },
-              function (error, response, body) {
-                  if (!error && response.statusCode == 200) 
-                      console.log(body)
-                  else
-                    console.log(error);
-                
-              }
-          );
-        
-        return;
-        
-
-      });
-    } // end for
-
-
-  }); // end fs
-
+var readFilesCallback = function () {
+ 
+  for(var website in sitesYml) {
+    var fs = require('fs');
+    var sUrl = url.parse(protocol + website,true);
+    var filename = "files/"+sUrl.hostname+".txt"
+    fs.readFile(filename, 'utf8', contentFetchInit )
   } // end for
+};
 
-// var site = 'http://www.inquisitr.com/3596027/will-a-mars-colony-bring-back-the-city-states-of-ancient-greece/'
+setTimeout(readFilesCallback, 5000);
 
 
-// /** Scraping with x-ray */
-// x(site, sitesYml[sUrl.hostname].content,[{
-// 	text: sitesYml[sUrl.hostname].article,
-//    image: sitesYml[sUrl.hostname].thumbnail
-// }] 
-// ).write('../body.html');
-// 
-  
-// })
+function postToWordpress(content,sUrl, title) {
+  var request = require('request'),
+  username = "admin",
+  password = "admin",
+  url = "http://" + username + ":" + password + "@172.16.100.47:8080/wp-json/wp/v2/posts";
+  searchPost(request, url, title, function(response) {
+    if(response.body == '[]'){
+      request.post(
+        url,
+        { json: {
+          title: title,
+          content: content,
+          status: "publish"
+        } },
+        function (error, response, body) {
+          if (!error && response.statusCode == 200) 
+            console.log("content posted!");
+          else
+            console.log(error);          
+        }
+      ); // end post request
+    }
+    else
+      console.log("*~>* Post already exist!");
+  }); // end search
+ 
+} // end postToWordpress
+
+function searchPost(request, url, title, callback) {
+  // url = "http://172.16.100.47:8080/wp-json/wp/v2/posts";
+  var mUrl = url+'?slug=' + title.replace(/[\s,.+]/g,'-');
+  request(mUrl, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    return callback(response);
+  }
+  else
+    return callback(404);
+})
+}
+

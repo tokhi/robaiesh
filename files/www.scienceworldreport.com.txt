@@ -1,14 +1,14 @@
 [
-  "http://www.scienceworldreport.com/articles/50967/20161024/space-tug-make-satellite-launches-cheaper-experts-suggest.htm",
-  "http://www.scienceworldreport.com/articles/50966/20161024/pluto-s-icy-heart-explain-tilt-geology-behavior-know-here.htm",
-  "http://www.scienceworldreport.com/articles/50962/20161024/where-will-people-live-mars-know-what-elon-musk.htm",
-  "http://www.scienceworldreport.com/articles/50957/20161024/nasa-start-fire-space-cygnus-saffire.htm",
-  "http://www.scienceworldreport.com/articles/50960/20161024/aliens-visited-earth-250-000-years-ago-new-findings-seem.htm",
-  "http://www.scienceworldreport.com/articles/50879/20161024/universes-oldest-planet-forming-disk-discovered.htm",
-  "http://www.scienceworldreport.com/articles/50842/20161022/nasa-confirms-european-mars-lander-schiaparelli-s-crash-what-mean.htm",
-  "http://www.scienceworldreport.com/articles/50820/20161022/junocam-smiling-planet-nasa-s-juno-spacecraft-captures-jupiter-smiley-face.htm",
-  "http://www.scienceworldreport.com/articles/50784/20161022/small-satellites-white-house-smallsats-white-house-initiative-aims-boost-private-innovation-small-space-satellites.htm",
-  "http://www.scienceworldreport.com/articles/50760/20161022/soyuz-docks-international-space-station-new-crew-steps-aboard-iss.htm",
-  "http://www.scienceworldreport.com/articles/50787/20161022/seasons-titan-affect-atmosphere-dramatically.htm",
-  "http://www.scienceworldreport.com/articles/50713/20161022/landslides-pluto-moon-charon-discovered-nasa-new-horizons.htm"
+  "http://www.scienceworldreport.com/articles/51263/20161028/facebook-pages-falsely-depict-live-clips-space.htm",
+  "http://www.scienceworldreport.com/articles/51275/20161028/footage-exomars-lander-revealed.htm",
+  "http://www.scienceworldreport.com/articles/51276/20161028/possibility-proxima-b-ocean-planet.htm",
+  "http://www.scienceworldreport.com/articles/51253/20161028/asteroid-miners-seeking-space-rock-plan.htm",
+  "http://www.scienceworldreport.com/articles/51227/20161028/model-mars-life-iron-loving-bacteria.htm",
+  "http://www.scienceworldreport.com/articles/51250/20161028/tiny-satellite-booms-back-images-tiangong-2.htm",
+  "http://www.scienceworldreport.com/articles/51224/20161028/quest-intelligent-life-around-weird-star-persists.htm",
+  "http://www.scienceworldreport.com/articles/51159/20161027/venus-formation-everything-need-know-planets-origin.htm",
+  "http://www.scienceworldreport.com/articles/51151/20161027/solar-storm-2016-northern-lights-spectacle-expected.htm",
+  "http://www.scienceworldreport.com/articles/51130/20161027/scientists-observe-star-triplets-being-born.htm",
+  "http://www.scienceworldreport.com/articles/51136/20161027/signals-space-aliens-disagreed-scientists.htm",
+  "http://www.scienceworldreport.com/articles/51119/20161027/solar-storms-blasts-planet-earth-disrupt-power-grids.htm"
 ]

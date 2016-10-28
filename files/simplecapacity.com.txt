@@ -8,13 +8,11 @@
   "http://simplecapacity.com/2016/09/take-2-normal-people-add-money-just-1-watch-happens-next/",
   "http://simplecapacity.com/2016/09/awakening-third-eye-pineal-gland/",
   "http://simplecapacity.com/2016/09/exactly-nikola-tesla-told-us-study-non-physical/",
-  "http://simplecapacity.com/2016/09/artist-spent-12-years-photographing-fetus-growing-womb-saw/",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/#",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/2/",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/3/",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/4/",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/5/",
   "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/2/",
-  "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/44/",
-  "http://aweditoria.com/"
+  "http://simplecapacity.com/category/inspiration-motivation-self-improvement/page/44/"
 ]
