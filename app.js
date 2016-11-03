@@ -54,6 +54,7 @@ function initPostRequest(sUrl, content) {
     content[0]['text'],
     ["http://code.jquery.com/jquery.js"],
     function (err, window) {
+      window.$(sitesYml[sUrl.hostname].title).remove();
       window.$('script').remove();
      for(var i in junks) {
         window.$(junks[i]).remove();
@@ -86,7 +87,7 @@ var contentFetchInit = function (err,data) {
           }] 
           )
           (function(err, content) {
-             if(content.length > 0)
+            if(content.length > 0)
               initPostRequest(sUrl, content)
            
           }); // end x
@@ -133,7 +134,7 @@ function postToWordpress(content,sUrl, title) {
       ); // end post request
     }
     else
-      console.log("*~>* Post already exist!");
+      console.log("*~>* Post already exist!", response.statusCode);
   }); // end search
  
 } // end postToWordpress

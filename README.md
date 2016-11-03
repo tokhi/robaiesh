@@ -1,7 +1,7 @@
 # Scrap any website
 Robaiesh helps you to scrap any website specified in the `config` file and post it to a content management system of your choice.
 
-Using this tool you can scrap lists and article pages.
+Using this tool you can scrap lists of new articles from a website and then scrap each single article.
 
 
 To add a website open the `sites.yml` file and provide the required elements, class names or class ids that you want to scrap.

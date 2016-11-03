@@ -38,7 +38,7 @@ simplecapacity.com:
   protocol: "http"
   content: "#post-left-col"
   thumbnail: "#content-main img@src"
-  title: ".post-title | noSpecialChar"
+  title: ".post-title"
   article: "#post-area@html | clean"
   list: "#home-mid-wrap"
   list_item: "a@href"
@@ -80,4 +80,4 @@ www.edmontonjournal.com:
 
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
-# http://reflectionofmind.org/
+# http://reflectionofmind.org/category/astronomy/
