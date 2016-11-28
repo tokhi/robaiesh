@@ -42,7 +42,7 @@ simplecapacity.com:
   article: "#post-area@html | clean"
   list: "#home-mid-wrap"
   list_item: "a@href"
-  junks: "#comments-button,.comments,.post-cat-link,.mashsb-container,#comments,.post-tags,.code-block"
+  junks: "#comments-button,.comments,.post-cat-link,.mashsb-container,#comments,.post-tags,.code-block,.mvp-org-wrap"
   path: "/category/inspiration-motivation-self-improvement/"
 # 4.
 www.scienceworldreport.com:
@@ -80,4 +80,4 @@ www.edmontonjournal.com:
 
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
-# http://reflectionofmind.org/category/astronomy/
+# http://reflectionofmind.org/

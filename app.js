@@ -23,6 +23,7 @@ for(var website in sitesYml) {
   website +=sitesYml[website].path;
   
   var sUrl = url.parse(protocol + website,true);
+   // console.log('host',sUrl.hostname);
   var filename = "files/"+sUrl.hostname+".txt"
   x(sUrl.href, sitesYml[sUrl.hostname].list,[
     sitesYml[sUrl.hostname].list_item
@@ -34,10 +35,8 @@ for(var website in sitesYml) {
 function xrayArticles(articleList, sitesYml, iterator, callback) {
   var sUrl = '';
   var articleSize = 0;
-  if (articleList.length > 9) 
-    articleSize = 10;
-  else
-    articleSize = 5;
+  if (articleList.length >= 5) articleSize = 5;
+  console.log('size | '+articleList[0].split(".")[1],articleList.length);
   function report() {
       callback(sUrl)
   } // end report
@@ -46,7 +45,7 @@ function xrayArticles(articleList, sitesYml, iterator, callback) {
     iterator(sUrl, report)
   }// end for
 }
-function initPostRequest(sUrl, content) {
+var initPostRequest = function(sUrl, content) {
   console.log('~>|',sUrl.href);
   /**  BEGIN content clean **/
   var junks = sitesYml[sUrl.hostname].junks.split(",")
@@ -62,51 +61,52 @@ function initPostRequest(sUrl, content) {
      for(var i in junks) {
         window.$(junks[i]).remove();
       }
-      postToWordpress(window.$("body").html(), sUrl, title);
+      if(!title.includes("Video"))
+        postToWordpress(window.$("body").html(), sUrl, title);
     }
   );
    /**  END content clean **/
 
 }
 
-var contentFetchInit = function (err,data) {
-  var domainKeys = Object.keys(sitesYml);
+
+var contentFetchInit = function(err,data) {
+  // var domainKeys = Object.keys(sitesYml);
   var count = 0;
-  for(var i=0;i<domainKeys.length;i++){
-  if (err) {
-    return console.log(err);
-  }
-
-
-  if(++count == domainKeys.length && data != null && data != ""){
+ 
+  if(data != null && data != ""){
      var urls = JSON.parse(data);
+     // console.log("**URLS: ", urls);
     // remove duplicates from array
     urls_array = Array.from(new Set(urls));
-    xrayArticles(urls_array, sitesYml, function(sUrl, report) {
-      x(sUrl.href, sitesYml[sUrl.hostname].content,[{
-           title: sitesYml[sUrl.hostname].title,
-           text: sitesYml[sUrl.hostname].article,
-           image: sitesYml[sUrl.hostname].thumbnail
-          }] 
-          )
-          (function(err, content) {
-            if(content.length > 0)
-              initPostRequest(sUrl, content)
-           
-          }); // end x
-    }, initPostRequest); // end xrayArticles
+   
+    if(urls_array.length > 0){     
+      xrayArticles(urls_array, sitesYml, function(sUrl, report) {
 
+        x(sUrl.href, sitesYml[sUrl.hostname].content,[{
+             title: sitesYml[sUrl.hostname].title,
+             text: sitesYml[sUrl.hostname].article,
+             image: sitesYml[sUrl.hostname].thumbnail
+            }] 
+            )
+            (function(err, content) {
+               // console.log(" *~>>",sUrl.hostname);
+              if(content.length > 0)
+                initPostRequest(sUrl, content)
+             
+            }); // end x
+      }, initPostRequest); // end xrayArticles
+    }
   } // end if
-}
 
 }; // end contentFetch
 
 var readFilesCallback = function () {
- 
   for(var website in sitesYml) {
     var fs = require('fs');
     var sUrl = url.parse(protocol + website,true);
     var filename = "files/"+sUrl.hostname+".txt"
+
     fs.readFile(filename, 'utf8', contentFetchInit )
   } // end for
 };
@@ -119,17 +119,22 @@ function postToWordpress(content,sUrl, title) {
   username = process.env.WP_USER,
   password = process.env.WP_PASSWORD,
   url = "http://" + username + ":" + password + "@science.goweird.site/wp-json/wp/v2/posts";
-  searchPost(request, url, title, function(response) {
+  searchPost(request, url, title, function(response, slug) {
+    url = encodeURI(url);
+    // console.log("response? ",response.body);
     if(response.body == '[]'){
       request.post(
         url,
         { json: {
           title: title,
           content: content,
-          status: "publish"
+          status: "publish",
+          slug: slug,
+          tags: [4,10]
         } },
         function (error, response, body) {
-          if (!error && response.statusCode == 200) 
+          console.log("sttus: ", response.statusCode);
+          if (response.statusCode == 200) 
             console.log("content posted!");
           else
             console.log(error);          
@@ -143,14 +148,21 @@ function postToWordpress(content,sUrl, title) {
 } // end postToWordpress
 
 function searchPost(request, url, title, callback) {
-  // url = "http://172.16.100.47:8080/wp-json/wp/v2/posts";
-  var mUrl = url+'?slug=' + title.replace(/[\s,.:?!'+[\]]/g,'-');
+  url = "http://science.goweird.site/wp-json/wp/v2/posts";
+  // slugify the title
+  var mtitle = title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
+  console.log("slug: ",mtitle)
+  var mUrl = url+'?slug=' + mtitle;
+
+  mUrl = encodeURI(mUrl);
+  
   request(mUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    return callback(response);
+    // console.log("body",response.body);
+    return callback(response, mtitle);
   }
   else
-    return callback(404);
+    return callback(404,'');
 })
 }
 
