@@ -23,7 +23,6 @@ for(var website in sitesYml) {
   website +=sitesYml[website].path;
   
   var sUrl = url.parse(protocol + website,true);
-   // console.log('host',sUrl.hostname);
   var filename = "files/"+sUrl.hostname+".txt"
   x(sUrl.href, sitesYml[sUrl.hostname].list,[
     sitesYml[sUrl.hostname].list_item
@@ -38,7 +37,7 @@ function xrayArticles(articleList, sitesYml, iterator, callback) {
   if (articleList.length >= 5) articleSize = 5;
   console.log('size | '+articleList[0].split(".")[1],articleList.length);
   function report() {
-      callback(sUrl)
+   callback(sUrl)
   } // end report
   for(var i=0;i<articleSize;i++){
     sUrl = url.parse(articleList[i],true);
@@ -76,13 +75,11 @@ var contentFetchInit = function(err,data) {
  
   if(data != null && data != ""){
      var urls = JSON.parse(data);
-     // console.log("**URLS: ", urls);
-    // remove duplicates from array
+     // remove duplicates from array
     urls_array = Array.from(new Set(urls));
    
     if(urls_array.length > 0){     
       xrayArticles(urls_array, sitesYml, function(sUrl, report) {
-
         x(sUrl.href, sitesYml[sUrl.hostname].content,[{
              title: sitesYml[sUrl.hostname].title,
              text: sitesYml[sUrl.hostname].article,
@@ -90,7 +87,6 @@ var contentFetchInit = function(err,data) {
             }] 
             )
             (function(err, content) {
-               // console.log(" *~>>",sUrl.hostname);
               if(content.length > 0)
                 initPostRequest(sUrl, content)
              
@@ -121,7 +117,6 @@ function postToWordpress(content,sUrl, title) {
   url = "http://" + username + ":" + password + "@science.goweird.site/wp-json/wp/v2/posts";
   searchPost(request, url, title, function(response, slug) {
     url = encodeURI(url);
-    // console.log("response? ",response.body);
     if(response.body == '[]'){
       request.post(
         url,
@@ -130,7 +125,7 @@ function postToWordpress(content,sUrl, title) {
           content: content,
           status: "publish",
           slug: slug,
-          tags: [4,10]
+          tags: [4,10] // TODO: get the tags from the api and choose it based on the title
         } },
         function (error, response, body) {
           console.log("sttus: ", response.statusCode);
@@ -151,14 +146,12 @@ function searchPost(request, url, title, callback) {
   url = "http://science.goweird.site/wp-json/wp/v2/posts";
   // slugify the title
   var mtitle = title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
-  console.log("slug: ",mtitle)
   var mUrl = url+'?slug=' + mtitle;
 
   mUrl = encodeURI(mUrl);
   
   request(mUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    // console.log("body",response.body);
     return callback(response, mtitle);
   }
   else

@@ -21,7 +21,7 @@ www.inspireactachieve.com:
   path: "/category/science/"
   list: ".td_block_inner"
   list_item: ".td-module-thumb a@href"
-  junks: ".code-block,.td-post-source-tags,.mashsb-container,"
+  junks: ".code-block,.td-post-source-tags,.mashsb-container"
 # 2.
 www.hngn.com:
   protocol: "http"
@@ -77,6 +77,17 @@ www.edmontonjournal.com:
   list_item: "article a@href"
   junks: ".story_details,.modal-close,#modal-share,.comments-area"
   path: "/category/space/"
+
+reflectionofmind.org:
+  protocol: "http"
+  content: ".mh-container-outer"
+  thumbnail: ".entry-thumbnail img@src"
+  title: ".entry-title"
+  article: ".mh-content@html | clean"
+  path: "/category/astronomy/"
+  list: ".mh-content"
+  list_item: ".mh-loop-item h3 a@href"
+  junks: ".mh-post-nav,.mh-comments,.comment-respond,.mh-meta,.code-block,.td-post-source-tags,.mashsb-container"
 
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
