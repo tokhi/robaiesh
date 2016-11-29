@@ -84,11 +84,10 @@ reflectionofmind.org:
   thumbnail: ".entry-thumbnail img@src"
   title: ".entry-title"
   article: ".mh-content@html | clean"
-  path: "/category/astronomy/"
+  path: "/category/science/"
   list: ".mh-content"
   list_item: ".mh-loop-item h3 a@href"
   junks: ".mh-post-nav,.mh-comments,.comment-respond,.mh-meta,.code-block,.td-post-source-tags,.mashsb-container"
 
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
-# http://reflectionofmind.org/
