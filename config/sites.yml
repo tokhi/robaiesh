@@ -25,10 +25,10 @@ www.inspireactachieve.com:
 # 2.
 www.hngn.com:
   protocol: "http"
-  content: ".main_cont_sub"
+  content: ".contents"
   thumbnail: ".img_article img@src"
   title: ".art-ttl"
-  article: ".article@html | clean"
+  article: "article@html | clean"
   list: ".sidebar"
   list_item: ".all_box a@href"
   junks: ".user_tool,.addthis_toolbox"
