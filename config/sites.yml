@@ -23,16 +23,16 @@ www.inspireactachieve.com:
   list_item: ".td-module-thumb a@href"
   junks: ".code-block,.td-post-source-tags,.mashsb-container"
 # 2.
-www.hngn.com:
-  protocol: "http"
-  content: ".contents"
-  thumbnail: ".img_article img@src"
-  title: ".art-ttl"
-  article: "article@html | clean"
-  list: ".sidebar"
-  list_item: ".all_box a@href"
-  junks: ".user_tool,.addthis_toolbox"
-  path: "/science/"
+# www.hngn.com:
+#   protocol: "http"
+#   content: ".contents"
+#   thumbnail: ".img_article img@src"
+#   title: ".art-ttl"
+#   article: "article@html | clean"
+#   list: ".sidebar"
+#   list_item: ".all_box a@href"
+#   junks: ".user_tool,.addthis_toolbox,.art_social_h"
+#   path: "/science/"
 # 3.
 simplecapacity.com:
   protocol: "http"
