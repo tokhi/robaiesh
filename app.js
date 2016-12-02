@@ -2,8 +2,9 @@ var url = require("url");
 
 /** load yml file**/
 YAML = require('yamljs');
- 
-sitesYml = YAML.load('config/sites.yml');
+var config = "config/" + process.argv[2] + ".yml";
+console.log("yml file", config);
+sitesYml = YAML.load(config);
 var Xray = require('x-ray');
 var x = Xray({
   filters: {
@@ -114,7 +115,8 @@ function postToWordpress(content,sUrl, title) {
   var request = require('request'),
   username = process.env.WP_USER,
   password = process.env.WP_PASSWORD,
-  url = "http://" + username + ":" + password + "@science.goweird.site/wp-json/wp/v2/posts";
+  url = "http://" + username + ":" + password + "@" + process.argv[2] + ".goweird.site/wp-json/wp/v2/posts";
+  console.log(url);
   searchPost(request, url, title, function(response, slug) {
     url = encodeURI(url);
     if(response.body == '[]'){
@@ -124,8 +126,8 @@ function postToWordpress(content,sUrl, title) {
           title: title,
           content: content,
           status: "publish",
-          slug: slug,
-          tags: [4,10] // TODO: get the tags from the api and choose it based on the title
+          slug: slug
+          // tags: [4,10] // TODO: get the tags from the api and choose it based on the title
         } },
         function (error, response, body) {
           console.log("sttus: ", response.statusCode);
@@ -143,7 +145,7 @@ function postToWordpress(content,sUrl, title) {
 } // end postToWordpress
 
 function searchPost(request, url, title, callback) {
-  url = "http://science.goweird.site/wp-json/wp/v2/posts";
+  url = "http://" + process.argv[2] + ".goweird.site/wp-json/wp/v2/posts";
   // slugify the title
   var mtitle = title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
   var mUrl = url+'?slug=' + mtitle;
@@ -152,6 +154,7 @@ function searchPost(request, url, title, callback) {
   
   request(mUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
+    console.log("** NO error");
     return callback(response, mtitle);
   }
   else

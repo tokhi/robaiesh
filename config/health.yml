@@ -1,0 +1,34 @@
+# # top slider 
+www.everydayhealth.com:
+  protocol: "http"
+  content: ".eh-content-wrapper_article"
+  thumbnail: ".wp-caption img@src"
+  title: ".article_header h1"
+  article: ".row@html | clean"
+  path: "/"
+  list: ".last-published-widget"
+  list_item: ".last-published-article a@href"
+  junks: ".eh-right-module,.eh-module-related,#eh-module-newsletter,.eh-module-sidebar"
+
+# Most view bottom right
+newsinhealth.nih.gov:
+  protocol: "https"
+  content: "#level2_inner"
+  thumbnail: ".wp-caption img@src"
+  title: "#col_665px h2"
+  article: "#col_665px@html | clean"
+  path: "/"
+  list: ".contentbox"
+  list_item: "ul a@href"
+  junks: ""
+# trending on wh
+# www.womenshealthmag.com:
+#   protocol: "http"
+#   content: ".items-container"
+#   thumbnail: ".wp-caption img@src"
+#   title: ".title"
+#   article: ".hero-article@html | clean"
+#   path: "/health/"
+#   list: "#content" #".pane-zeus-smartqueue-homepage-homepage-featured-content"
+#   list_item: ".article-title a@href"
+#   junks: ".ob_what,.field-tags,#outbrain_widget_1,.sticky,.sharebar-wrapper,#newsletter-block"
