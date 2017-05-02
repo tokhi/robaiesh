@@ -36,6 +36,7 @@ function xrayArticles(articleList, sitesYml, iterator, callback) {
   var sUrl = '';
   var articleSize = 0;
   if (articleList.length >= 5) articleSize = 5;
+  if (articleList.length >= 6) articleSize = 6;
   console.log('size | '+articleList[0].split(".")[1],articleList.length);
   function report() {
    callback(sUrl)

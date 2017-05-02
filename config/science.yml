@@ -21,7 +21,7 @@ www.inspireactachieve.com:
   path: "/category/science/"
   list: ".td_block_inner"
   list_item: ".td-module-thumb a@href"
-  junks: ".code-block,.td-post-source-tags,.mashsb-container"
+  junks: ".code-block,.adsbygoogle,.td-post-source-tags,.mashsb-container"
 # 2.
 # www.hngn.com:
 #   protocol: "http"
@@ -42,19 +42,19 @@ simplecapacity.com:
   article: "#post-area@html | clean"
   list: "#home-mid-wrap"
   list_item: "a@href"
-  junks: "#comments-button,.comments,.post-cat-link,.mashsb-container,#comments,.post-tags,.code-block,.mvp-org-wrap"
+  junks: "#comments-button,.adsbygoogle,.comments,.post-cat-link,.mashsb-container,#comments,.post-tags,.code-block,.mvp-org-wrap"
   path: "/category/inspiration-motivation-self-improvement/"
 # 4.
-www.scienceworldreport.com:
-  protocol: "http"
-  content: ".uni-main"
-  thumbnail: ".story-contents img@src"
-  title: ".story-headline"
-  article: ".uni-main@html | clean"
-  list: "#stype"
-  list_item: ".bk-con a@href"
-  junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools,.bk-mostpop,.adunit_rectangle,.bk-desktop_related"
-  path: "/space-the-future/"
+#www.scienceworldreport.com:
+#  protocol: "http"
+#  content: ".uni-main"
+#  thumbnail: ".story-contents img@src"
+#  title: ".story-headline"
+#  article: "article@html | clean"
+#  list: ".bk-bd"
+#  list_item: ".bk-con a@href"
+#  junks: ".bk-desktop_related,.story-tools,.story-posted,.story-tools,.bk-mostpop,.adunit_rectangle,.bk-desktop_related"
+#  path: "/space-the-future/"
 # 5.
 edmontonjournal.com:
   protocol: "http"
@@ -64,7 +64,7 @@ edmontonjournal.com:
   article: ".l-article@html | clean"
   list: ".twelvecol"
   list_item: "article a@href"
-  junks: ".story_details,.modal-close,#modal-share,.comments-area"
+  junks: ".story_details,.adsbygoogle,.modal-close,#modal-share,.comments-area"
   path: "/category/space/"
 
 www.edmontonjournal.com:
@@ -75,19 +75,29 @@ www.edmontonjournal.com:
   article: ".l-article@html | clean"
   list: ".twelvecol"
   list_item: "article a@href"
-  junks: ".story_details,.modal-close,#modal-share,.comments-area"
+  junks: ".adsbygoogle,.story_details,.modal-close,#modal-share,.comments-area"
   path: "/category/space/"
 
 reflectionofmind.org:
   protocol: "http"
-  content: ".mh-container-outer"
+  content: ".content"
   thumbnail: ".entry-thumbnail img@src"
-  title: ".entry-title"
-  article: ".mh-content@html | clean"
+  title: ".single-title"
+  article: ".single_post@html | clean"
   path: "/category/science/"
-  list: ".mh-content"
-  list_item: ".mh-loop-item h3 a@href"
-  junks: ".mh-post-nav,.mh-comments,.comment-respond,.mh-meta,.code-block,.td-post-source-tags,.mashsb-container"
+  list: ".article"
+  list_item: ".post h2 a@href"
+  junks: ".adsbygoogle,.title,.post-info,.mh-post-nav,.mh-comments,.comment-respond,.mh-meta,.code-block,.td-post-source-tags,.mashsb-container"
 
+m.phys.org:
+  protocol: "https"
+  content: ".page-active"
+  thumbnail: ".entry-thumbnail img@src"
+  title: ".content-head h1"
+  article: "article@html | clean"
+  path: "/space-news/"
+  list: ".listnews"
+  list_item: "li a@href"
+  junks: ".adsbygoogle,.mh-meta"
 #  add javascrip rules to remove some of the divs on load
 # http://theusualroutine.com/
