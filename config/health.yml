@@ -8,7 +8,7 @@ www.everydayhealth.com:
   path: "/"
   list: ".last-published-widget"
   list_item: ".last-published-article a@href"
-  junks: ".eh-right-module,.eh-module-related,#eh-module-newsletter,.eh-module-sidebar"
+  junks: ".eh-right-module,.adsbygoogle,.eh-module-related,#eh-module-newsletter,.eh-module-sidebar"
 
 # Most view bottom right
 newsinhealth.nih.gov:
@@ -20,7 +20,7 @@ newsinhealth.nih.gov:
   path: "/"
   list: ".contentbox"
   list_item: "ul a@href"
-  junks: ""
+  junks: ".adsbygoogle,"
 # trending on wh
 # www.womenshealthmag.com:
 #   protocol: "http"
